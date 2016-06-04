@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Performance Tracker</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link href="http://cdn.jsdelivr.net/webjars/bootstrap/3.2.0/css/bootstrap.min.css"
+          th:href="@{/webjars/bootstrap/3.2.0/css/bootstrap.min.css}"
+          rel="stylesheet" media="screen" />
+    <link href="../static/css/core.css"
+          th:href="@{/css/core.css}"
+          rel="stylesheet" media="screen" />
+    <script src="http://cdn.jsdelivr.net/webjars/jquery/2.1.1/jquery.min.js"
+            th:src="@{/webjars/jquery/2.1.1/jquery.min.js}"></script>
+</head>
+<!-- Header -->
+<div th:replace="fragments/header :: header">
+    <!-- ============================================================================ -->
+    <!-- This content is only used for static prototyping purposes (natural templates)-->
+    <!-- and is therefore entirely optional, as this markup fragment will be included -->
+    <!-- from "fragments/header.html" at runtime.                                     -->
+    <!-- ============================================================================ -->
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">Static header</a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#">Home</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<body>
+<table>
+<tr>
+<td>
+<div class="container">
+<form>
+  <fieldset>
+  <legend>Monday Jan 19th, 2015</legend>
+  
+  <details>
+  <summary>Morning Work</summary><br></br>
+  <table style="width:100%; float:left">
+  <tr>
+    <td>
+      <input type="radio" name="morningRadio" value="0">Did Not Complete</input><br></br>
+      <input type="radio" name="morningRadio" value="1">Needed Extra Time</input><br></br>
+      <input type="radio" name="morningRadio" value="2">More than 2 Redirections</input><br></br>
+      <input type="radio" name="morningRadio" value="3">Good Job</input><br></br>
+      <input type="radio" name="morningRadio" value="4">Other</input><br></br>
+      <input type="radio" name="morningRadio" value="5">Did as a Class</input><br></br>
+    </td>
+  </tr>
+  <tr>
+    <td><legend>Comment</legend>
+      <textarea id="morningComment" style="width:98%"></textarea>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <button type="submit">Submit</button>
+    </td>
+  </tr>
+  </table>
+  </details>
+  <details>
+  <summary>Independent Work</summary><br></br>
+  <table style="width:100%; float:left">
+  <tr>
+    <td>
+      <input type="radio" name="indRadio" value="0">Did Not Complete</input><br></br>
+      <input type="radio" name="indRadio" value="1">Needed Extra Time</input><br></br>
+      <input type="radio" name="indRadio" value="2">More than 2 Redirections</input><br></br>
+      <input type="radio" name="indRadio" value="3">Good Job</input><br></br>
+      <input type="radio" name="indRadio" value="4">Other</input><br></br>
+      <input type="radio" name="indRadio" value="5">Did as a Class</input><br></br>
+    </td>
+  </tr>
+  <tr>
+    <td><legend>Comment</legend>
+      <textarea id="indComment" style="width:98%"></textarea>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <button type="submit">Submit</button>
+    </td>
+  </tr>
+  </table>
+  </details>
+    <details>
+  <summary>Workshop Center</summary><br></br>
+  <table style="width:100%; float:left">
+  <tr>
+    <td>
+      <input type="radio" name="workRadio" value="0">Did Not Complete</input><br></br>
+      <input type="radio" name="workRadio" value="1">Needed Extra Time</input><br></br>
+      <input type="radio" name="workRadio" value="2">More than 2 Redirections</input><br></br>
+      <input type="radio" name="workRadio" value="3">Good Job</input><br></br>
+      <input type="radio" name="workRadio" value="4">Other</input><br></br>
+      <input type="radio" name="workRadio" value="5">Did as a Class</input><br></br>
+    </td>
+  </tr>
+  <tr>
+    <td><legend>Comment</legend>
+      <textarea id="workComment" style="width:98%"></textarea>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <button type="submit">Submit</button>
+    </td>
+  </tr>
+  </table>
+  </details>
+  <details>
+  <summary>Writing</summary><br></br>
+  <table style="width:100%; float:left">
+  <tr>
+    <td>
+      <input type="radio" name="writingRadio" value="0">Did Not Complete</input><br></br>
+      <input type="radio" name="writingRadio" value="1">Needed Extra Time</input><br></br>
+      <input type="radio" name="writingRadio" value="2">More than 2 Redirections</input><br></br>
+      <input type="radio" name="writingRadio" value="3">Good Job</input><br></br>
+      <input type="radio" name="writingRadio" value="4">Other</input><br></br>
+      <input type="radio" name="writingRadio" value="5">Did as a Class</input><br></br>
+    </td>
+  </tr>
+  <tr>
+    <td><legend>Comment</legend>
+      <textarea id="writingComment" style="width:98%"></textarea>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <button type="submit">Submit</button>
+    </td>
+  </tr>
+  </table>
+  </details>
+    <details>
+  <summary>Math</summary><br></br>
+  <table style="width:100%; float:left">
+  <tr>
+    <td>
+      <input type="radio" name="mathRadio" value="0">Did Not Complete</input><br></br>
+      <input type="radio" name="mathRadio" value="1">Needed Extra Time</input><br></br>
+      <input type="radio" name="mathRadio" value="2">More than 2 Redirections</input><br></br>
+      <input type="radio" name="mathRadio" value="3">Good Job</input><br></br>
+      <input type="radio" name="mathRadio" value="4">Other</input><br></br>
+      <input type="radio" name="mathRadio" value="5">Did as a Class</input><br></br>
+    </td>
+  </tr>
+  <tr>
+    <td><legend>Comment</legend>
+      <textarea id="mathComment" style="width:98%"></textarea>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <button type="submit">Submit</button>
+    </td>
+  </tr>
+  </table>
+  </details>
+    <details>
+  <summary>Other</summary><br></br>
+  <table style="width:100%; float:left">
+  <tr>
+    <td>
+      <input type="radio" name="otherRadio" value="0"> 0</input><br></br>
+      <input type="radio" name="otherRadio" value="1"> 1</input><br></br>
+      <input type="radio" name="otherRadio" value="2"> 2</input><br></br>
+      <input type="radio" name="otherRadio" value="3"> 3</input><br></br>
+    </td>
+  </tr>
+    <tr>
+    <td>
+      <input type="radio" name="otherHelpRadio" value="0"> Recieved Assistance</input><br></br>
+    </td>
+  </tr>
+
+  <tr>
+    <td><legend>Comment</legend>
+      <textarea id="otherComment" style="width:98%"></textarea>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <button type="submit">Submit</button>
+    </td>
+  </tr>
+  </table>
+  </details>
+</fieldset>
+</form>
+</div>
+</td></tr>
+</table>
+<br></br>
+</body>
+</html>
+<div th:replace="fragments/footer :: footer">&copy; 2014 The Static Templates</div>

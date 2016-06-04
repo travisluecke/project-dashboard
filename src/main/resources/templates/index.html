@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Performance Tracker</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link href="http://cdn.jsdelivr.net/webjars/bootstrap/3.2.0/css/bootstrap.min.css"
+          th:href="@{/webjars/bootstrap/3.2.0/css/bootstrap.min.css}"
+          rel="stylesheet" media="screen" />
+    <link href="../static/css/core.css"
+          th:href="@{/css/core.css}"
+          rel="stylesheet" media="screen" />
+    <script src="http://cdn.jsdelivr.net/webjars/jquery/2.1.1/jquery.min.js"
+            th:src="@{/webjars/jquery/2.1.1/jquery.min.js}"></script>
+</head>
+<!-- Header -->
+<div th:replace="fragments/header :: header">
+    <!-- ============================================================================ -->
+    <!-- This content is only used for static prototyping purposes (natural templates)-->
+    <!-- and is therefore entirely optional, as this markup fragment will be included -->
+    <!-- from "fragments/header.html" at runtime.                                     -->
+    <!-- ============================================================================ -->
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">Static header</a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#">Home</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<body>
+<div class="container">
+  <div class="row">
+    <div class="span2">
+      <div> sidebar </div>
+      <table class="table">
+  <thead class="thead-inverse">
+    <tr>
+      <th>#</th>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Username</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>Mark</td>
+      <td>Otto</td>
+      <td>@mdo</td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>Jacob</td>
+      <td>Thornton</td>
+      <td>@fat</td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td>Larry</td>
+      <td>the Bird</td>
+      <td>@twitter</td>
+    </tr>
+  </tbody>
+</table>
+      <!--Sidebar content-->
+    </div>
+    <div class="span10">
+      <!--Body content-->
+       <pre>
+      Dashboard (Active Projects)
+
+Project Scheduling
+# of Active Projects
+# Active Projects on schedule
+# Active Projects Behind Schedule
+
+Project Budgeting
+# of Active Projects within Budget
+# of Active Projects Over Budget
+Current Budget Net Loss/Gain $'s of Active Projects
+
+Project Manaufacturer/Product Vendors
+# of Current Active Vendors
+# of Active Projects w/ Product Claims
+# of Active Projects w/assigned product
+# of Active Projects w/unassigned product
+# of Manufacturers with Stocking Orders Required within next 30 days
+# of Manufactruers not meeting minimum reserve requirement
+
+Project General Contractor
+# of Current Active General Contractors
+# of General Contractors over budget on active projects
+# of General Contractors behind schedule on active projects
+# of General Contractors involved with claim on active project
+# of General contractors who have submitted change orders on active projects
+
+Project Contractors/Installers
+# of Current Active Contractors
+# of Contractors over budget on active projects
+# of Contractors behind schedule on active projects
+# of Contractors involved with claim on active project
+# of contractors who have submitted change orders on active projects
+
+Project Managers (Internal)
+# of Active Project Managers
+Average # of active Projects per Project Manager
+Average # of projects under budget per Project Manager
+Average # of Projects on schedule per Project Manager
+</pre>
+    </div>
+  </div>
+</div>
+
+
+</body>
+</html>
+<div th:replace="fragments/footer :: footer">&copy; 2014 The Static Templates</div>
