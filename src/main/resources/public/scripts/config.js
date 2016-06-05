@@ -24,13 +24,18 @@ function configState($stateProvider, $urlRouterProvider, $compileProvider) {
                 pageTitle: 'Dashboard',
             }
         })
-        .state('active', {
-        	url: "/active",
-        	templateUrl: "views/active.hmtl",
+        .state('projects', {
+        	url: "/projects",
+        	templateUrl: "views/projects.html",
         	data: {
         		pageTitle: "Active Projects Dashboard"
-        	}
-        })  
+        	},
+        	
+        	controller: function($scope) {
+        		alert("foobar");
+                $scope.projects = [{ "_id": "1", "name":"project1" }];
+            }
+        }) 
 }
 
 angular
