@@ -32,8 +32,10 @@ function configState($stateProvider, $urlRouterProvider, $compileProvider) {
         	},
         	
         	controller: function($scope) {
-        		alert("foobar");
-                $scope.projects = [{ "_id": "1", "name":"project1" }];
+                $scope.projects = [{ "_id": "336633", "name":"Store #1603", "onSchedule": true, "onBudget": true, "bugetOverage": "0" }, 
+                                   { "_id": "336634", "name":"Store #1604", "onSchedule": true, "onBudget": false, "bugetOverage": "+$15,000" },
+                                   { "_id": "336635", "name":"Store #1605", "onSchedule": false, "onBudget": true, "bugetOverage": "-$1,000"  }
+                                   ];
             }
         }) 
 }
