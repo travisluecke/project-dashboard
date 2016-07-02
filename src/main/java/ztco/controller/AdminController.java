@@ -48,10 +48,10 @@ class AdminController {
 		project.add("vendors",vendorIds);
 		project.add("contractors",genConIds);
 		
-		projectsList.add(project);
-		
-		System.out.println(projectsList.toString());
-		
+		for (int i=0;i<10;i++) {
+			projectsList.add(project);
+		}
+
   	    return projectsList;
 	}
 

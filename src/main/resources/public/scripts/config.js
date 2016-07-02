@@ -27,7 +27,6 @@ function configState($stateProvider, $urlRouterProvider, $compileProvider) {
         .state('projects', {
         	url: "/projects",
         	templateUrl: "views/projects/projects.html",
-        	controller: "AdminController",
         	data: {
         		pageTitle: "Active Projects Dashboard"
         	},
@@ -36,7 +35,7 @@ function configState($stateProvider, $urlRouterProvider, $compileProvider) {
         		function Projects($scope, $http) {
         	    $http.get('http://localhost:8080/api/projects').
         	        success(function(data) {
-        	            $scope.greeting = data;
+        	            $scope.projects = data;
         	        });
         	}
         		

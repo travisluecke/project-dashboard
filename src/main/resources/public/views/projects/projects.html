@@ -1,0 +1,43 @@
+<div ng-init="projects"> <div>
+    <table id="projects" class="table table-striped table-bordered" cellspacing="0" width="100%">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>   
+                <th>Address</th>
+                <th>AuthId</th>
+                <th>Parent Project</th>
+                <th>Parent Of</th>
+                <th>Siblings</th>
+                <th>Vendors</th>
+                <th>General Contractors</th>                             
+            </tr>
+        </thead>
+        <tfoot>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>   
+                <th>Address</th>
+                <th>AuthId</th>
+                <th>Parent Project</th>
+                <th>Parent Of</th>
+                <th>Siblings</th>
+                <th>Vendors</th>
+                <th>General Contractors</th>
+            </tr>
+        </tfoot>
+        <tbody>
+        <tr ng-repeat="project in projects">
+                <td><p>{{ project._id }}</p></td>
+                <td>{{ project.name }} </td>
+                <td>{{ project.address }} </td>
+                <td>{{ project.authId }} </td>
+                <td>{{ project.parentId }} </td>
+                <td>{{ project.parentOf }} </td>
+                <td>{{ project.siblings }} </td>
+                <td>{{ project.vendorIds }} </td>
+                <td>{{ project.generalConIds }} </td>               
+            </tr>
+        </tbody>
+    </table>
+ </div>
