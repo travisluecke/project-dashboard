@@ -33,7 +33,7 @@ function configState($stateProvider, $urlRouterProvider, $compileProvider) {
         	
         	controller: 
         		function Projects($scope, $http) {
-        	    $http.get('http://localhost:8080/api/projects').
+        	    $http.get('/api/projects').
         	        success(function(data) {
         	            $scope.projects = data;
         	        });
