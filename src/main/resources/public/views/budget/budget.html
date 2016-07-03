@@ -1,4 +1,5 @@
-<table id="projects" class="table table-striped table-bordered" cellspacing="0" width="100%">
+<div ng-init="budgets">
+    <table id="budgets" class="table table-striped table-bordered" cellspacing="0" width="100%">
         <thead>
             <tr>
                 <th>Id</th>
@@ -23,7 +24,8 @@
                 <td>{{ budget.name }} </td>
                 <td>{{ budget.allocated }} </td>
                 <td>{{ budget.onBudget }} </td>
-                <td>{{ budget.budgetOverage }} </td>               
+                <td>{{ budget.budget }} </td>               
             </tr>
         </tbody>
     </table>
+<div>

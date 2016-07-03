@@ -47,14 +47,13 @@ function configState($stateProvider, $urlRouterProvider, $compileProvider) {
         		pageTitle: "Budget Dashboard"
         	},
         	
-        	controller: function($scope) {
-                $scope.budget = 
-[
-{ "_id": "436635","parentId" : null,"parentOf" : [], "siblings" : [],"name":"Store #1605","onSchedule": false,"onBudget": true,"buget" : 3000.00,"budgetOverage": -1000.00,"cost": 4000.00 },
-{ "_id": "436633", "name":"Store #1603", "allocated": 100000, "onBudget": true, "budgetOverage": 0.00 }, 
-{ "_id": "436634", "name":"Store #1604", "allocated": 125000, "onBudget": false, "budgetOverage": 15000.00 }
-];
-            }
+        	controller: 
+        		function Budgets($scope, $http) {
+        	    $http.get('/api/budgets').
+        	        success(function(data) {
+        	            $scope.budgets = data;
+        	        });
+        	}
         })
         .state('vendors', {
         	url: "/vendors",
@@ -63,14 +62,13 @@ function configState($stateProvider, $urlRouterProvider, $compileProvider) {
         		pageTitle: "Vendors Dashboard"
         	},
         	
-        	controller: function($scope) {
-                $scope.vendors = 
-[
-{ "_id": "436635","parentId" : null,"parentOf" : [], "siblings" : [],"name":"Store #1605","onSchedule": false,"onBudget": true,"buget" : 3000.00,"budgetOverage": -1000.00,"cost": 4000.00 },
-{ "_id": "436633", "name":"Store #1603", "allocated": 100000, "onBudget": true, "budgetOverage": 0.00 }, 
-{ "_id": "436634", "name":"Store #1604", "allocated": 125000, "onBudget": false, "budgetOverage": 15000.00 }
-];
-            }
+        	controller: 
+        		function Vendors($scope, $http) {
+        	    $http.get('/api/vendors').
+        	        success(function(data) {
+        	            $scope.vendors = data;
+        	        });
+        	}
         })
         .state('contractors', {
         	url: "/contractors",
@@ -79,14 +77,14 @@ function configState($stateProvider, $urlRouterProvider, $compileProvider) {
         		pageTitle: "Contractors Dashboard"
         	},
         	
-        	controller: function($scope) {
+        	controller: 
+        		function Contractors($scope) {
                 $scope.contractors = 
-[
-{ "_id": "436635","parentId" : null,"parentOf" : [], "siblings" : [],"name":"Store #1605","onSchedule": false,"onBudget": true,"buget" : 3000.00,"budgetOverage": -1000.00,"cost": 4000.00 },
-{ "_id": "436633", "name":"Store #1603", "allocated": 100000, "onBudget": true, "budgetOverage": 0.00 }, 
-{ "_id": "436634", "name":"Store #1604", "allocated": 125000, "onBudget": false, "budgetOverage": 15000.00 }
-];
-            }
+            	    $http.get('/api/contractors').
+        	        success(function(data) {
+        	            $scope.contractors = data;
+        	        });
+        	}
         })
         .state('managers', {
         	url: "/managers",
@@ -95,7 +93,8 @@ function configState($stateProvider, $urlRouterProvider, $compileProvider) {
         		pageTitle: "Managers Dashboard"
         	},
         	
-        	controller: function($scope) {
+        	controller: 
+        		function Managers($scope) {
                 $scope.managers = 
 [
 { "_id": "436635","parentId" : null,"parentOf" : [], "siblings" : [],"name":"Store #1605","onSchedule": false,"onBudget": true,"buget" : 3000.00,"budgetOverage": -1000.00,"cost": 4000.00 },
@@ -111,7 +110,8 @@ function configState($stateProvider, $urlRouterProvider, $compileProvider) {
         		pageTitle: "Installers Dashboard"
         	},
         	
-        	controller: function($scope) {
+        	controller: 
+        		function Installers($scope) {
                 $scope.installers = 
 [
 { "_id": "436635","parentId" : null,"parentOf" : [], "siblings" : [],"name":"Store #1605","onSchedule": false,"onBudget": true,"buget" : 3000.00,"budgetOverage": -1000.00,"cost": 4000.00 },

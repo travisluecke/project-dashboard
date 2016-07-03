@@ -1,4 +1,5 @@
-<table id="projects" class="table table-striped table-bordered" cellspacing="0" width="100%">
+<div ng-init="contractors">
+    <table id="contractors" class="table table-striped table-bordered" cellspacing="0" width="100%">
         <thead>
             <tr>
                 <th>Id</th>
@@ -16,11 +17,12 @@
             </tr>
         </tfoot>
         <tbody>
-            <tr ng-repeat="vendor in vendors">
-                <td>{{ vendor._id }}</td>
-                <td>{{ vendor.name }} </td>
-                <td>{{ vendor.address }} </td>
-                <td>{{ vendor.accountNumber }} </td>
+            <tr ng-repeat="contractor in contractors">
+                <td>{{ contractor._id }}</td>
+                <td>{{ contractor.name }} </td>
+                <td>{{ contractor.address }} </td>
+                <td>{{ contractor.accountNumber }} </td>
             </tr>
         </tbody>
     </table>
+</div>
