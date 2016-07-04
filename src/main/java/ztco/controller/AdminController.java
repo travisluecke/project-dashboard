@@ -50,7 +50,58 @@ class AdminController {
         return contractors.toString();
     }
     
+    @RequestMapping( value = "api/installers", method = RequestMethod.GET, produces = "application/json; charset=utf-8")
+    @ResponseBody
+    public String installers() {
+    	JsonArray installers;
+    	installers = getInstallers();
+        return installers.toString();
+    }
     
+    @RequestMapping( value = "api/managers", method = RequestMethod.GET, produces = "application/json; charset=utf-8")
+    @ResponseBody
+    public String managers() {
+    	JsonArray managers;
+    	managers = getManagers();
+        return managers.toString();
+    }
+    
+    private JsonArray getManagers() {
+		
+		JsonArray managerList = new JsonArray();
+
+		JsonObject manager = new JsonObject();
+		manager.addProperty("_id","567891234");
+		manager.addProperty("name","manager one");
+		manager.addProperty("address","1234 Defense Highway, Crofton MD 21114");
+		manager.addProperty("accountNumber","01122334455");
+		
+		for (int i=0;i<10;i++) {
+			managerList.add(manager);
+		}
+
+  	    return managerList;
+	}
+
+
+    
+	private JsonArray getInstallers() {
+		
+		JsonArray installerList = new JsonArray();
+
+		JsonObject installer = new JsonObject();
+		installer.addProperty("_id","567891234");
+		installer.addProperty("name","installer one");
+		installer.addProperty("onSchedule",true);
+		installer.addProperty("budgetOverage",0);
+		
+		for (int i=0;i<10;i++) {
+			installerList.add(installer);
+		}
+
+  	    return installerList;
+	}
+
 	private JsonArray getContractors() {
 		
 		JsonArray contractorList = new JsonArray();

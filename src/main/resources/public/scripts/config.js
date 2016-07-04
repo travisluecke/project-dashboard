@@ -78,7 +78,7 @@ function configState($stateProvider, $urlRouterProvider, $compileProvider) {
         	},
         	
         	controller: 
-        		function Contractors($scope) {
+        		function Contractors($scope, $http) {
                 $scope.contractors = 
             	    $http.get('/api/contractors').
         	        success(function(data) {
@@ -94,14 +94,13 @@ function configState($stateProvider, $urlRouterProvider, $compileProvider) {
         	},
         	
         	controller: 
-        		function Managers($scope) {
-                $scope.managers = 
-[
-{ "_id": "436635","parentId" : null,"parentOf" : [], "siblings" : [],"name":"Store #1605","onSchedule": false,"onBudget": true,"buget" : 3000.00,"budgetOverage": -1000.00,"cost": 4000.00 },
-{ "_id": "436633", "name":"Store #1603", "allocated": 100000, "onBudget": true, "budgetOverage": 0.00 }, 
-{ "_id": "436634", "name":"Store #1604", "allocated": 125000, "onBudget": false, "budgetOverage": 15000.00 }
-];
-            }
+        		function Managers($scope, $http) {
+        	    $http.get('/api/managers').
+        	        success(function(data) {
+        	            $scope.managers = data;
+        	        });
+        	}
+        	
         })
         .state('installers', {
         	url: "/installers",
@@ -111,14 +110,13 @@ function configState($stateProvider, $urlRouterProvider, $compileProvider) {
         	},
         	
         	controller: 
-        		function Installers($scope) {
-                $scope.installers = 
-[
-{ "_id": "436635","parentId" : null,"parentOf" : [], "siblings" : [],"name":"Store #1605","onSchedule": false,"onBudget": true,"buget" : 3000.00,"budgetOverage": -1000.00,"cost": 4000.00 },
-{ "_id": "436633", "name":"Store #1603", "allocated": 100000, "onBudget": true, "budgetOverage": 0.00 }, 
-{ "_id": "436634", "name":"Store #1604", "allocated": 125000, "onBudget": false, "budgetOverage": 15000.00 }
-];
-            }
+        		function Installers($scope, $http) {
+        	    $http.get('/api/installers').
+        	        success(function(data) {
+        	            $scope.installers = data;
+        	        });
+        	}
+        	
         })
         
 }

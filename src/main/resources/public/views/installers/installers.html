@@ -1,4 +1,5 @@
-<table id="projects" class="table table-striped table-bordered" cellspacing="0" width="100%">
+<div ng-init="installers">
+    <table id="installers" class="table table-striped table-bordered" cellspacing="0" width="100%">
         <thead>
             <tr>
                 <th>Id</th>
@@ -19,11 +20,12 @@
         </tfoot>
         <tbody>
             <tr ng-repeat="installer in installers">
-                <td>{{ project._id }}</td>
-                <td>{{ project.name }} </td>
-                <td>{{ project.onSchedule }} </td>
-                <td>{{ project.onBudget }} </td>
-                <td>{{ project.budgetOverage }} </td>               
+                <td>{{ installer._id }}</td>
+                <td>{{ installer.name }} </td>
+                <td>{{ installer.onSchedule }} </td>
+                <td>{{ installer.onBudget }} </td>
+                <td>{{ installer.budgetOverage }} </td>               
             </tr>
         </tbody>
     </table>
+</div>
