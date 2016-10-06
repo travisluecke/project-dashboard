@@ -13,6 +13,19 @@
                 <th>General Contractors</th>                             
             </tr>
         </thead>
+        <tbody>
+        <tr ng-repeat="project in projects">
+            <td>{{ project._id }}</td>
+            <td>{{ project.name }} </td>
+            <td>{{ project.address }} </td>
+            <td>{{ project.authId }} </td>
+            <td>{{ project.parentId }} </td>
+            <td>{{ project.parentOf }} </td>
+            <td>{{ project.siblings }} </td>
+            <td>{{ project.vendorIds }} </td>
+            <td>{{ project.generalConIds }} </td>
+        </tr>
+        </tbody>
         <tfoot>
             <tr>
                 <th>Id</th>
@@ -26,18 +39,5 @@
                 <th>General Contractors</th>
             </tr>
         </tfoot>
-        <tbody>
-        <tr ng-repeat="project in projects">
-                <td><{{ project._id }}</td>
-                <td>{{ project.name }} </td>
-                <td>{{ project.address }} </td>
-                <td>{{ project.authId }} </td>
-                <td>{{ project.parentId }} </td>
-                <td>{{ project.parentOf }} </td>
-                <td>{{ project.siblings }} </td>
-                <td>{{ project.vendorIds }} </td>
-                <td>{{ project.generalConIds }} </td>               
-            </tr>
-        </tbody>
     </table>
 </div>
